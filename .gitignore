@@ -1,0 +1,10 @@
+bin/
+CMakeFiles/
+.ycm_extra_conf.py
+.ycm_extra_conf.pyc
+*~
+*.swp
+*.swo
+CMakeCache.txt
+Makefile
+cmake_install.cmake
