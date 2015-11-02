@@ -20,7 +20,8 @@ int main()
 
 	while(int c = getch() != 'q')
 	{
-		clear();
+		//clear();
+		erase();
 		activegame.update();
 		activegame.draw();
 		refresh();

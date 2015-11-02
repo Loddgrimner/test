@@ -26,4 +26,9 @@ void game::draw()
 	for (auto& i : gameobjects) {
 		i.accept(dw);
 	}
+
+	listvisitor lv;
+	for (auto& i : gameobjects) {
+		i.accept(lv);
+	}
 }

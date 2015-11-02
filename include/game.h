@@ -2,6 +2,7 @@
 
 #include <vector>
 #include "drawvisitor.h"
+#include "listvisitor.h"
 #include "movevisitor.h"
 #include "gameobject.h"
 
