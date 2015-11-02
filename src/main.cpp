@@ -3,19 +3,27 @@
 #include <ncurses.h>
 #include <locale.h>
 
+#include "game.h"
+
 int main()
 {
+	game activegame;
+
 	setlocale(LC_ALL,"");
 	initscr();
 	raw();
 	keypad(stdscr, TRUE);
 	mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL);
 	noecho();
+	timeout(500);
 
-	mvprintw(2,2,"╬");
-	refresh();
-
-	int c = getch();
+	while(int c = getch() != 'q')
+	{
+		clear();
+		activegame.update();
+		activegame.draw();
+		refresh();
+	}
 	endwin();
 	return 0;
 }
