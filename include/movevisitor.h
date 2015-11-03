@@ -1,7 +1,5 @@
 #pragma once
 
-#include <stdlib.h>
-
 #include "visitor.h"
 
 class movevisitor: public visitor
