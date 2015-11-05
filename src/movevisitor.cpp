@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "movevisitor.h"
+#include "path.h"
 
 movevisitor::movevisitor()
 {
@@ -7,6 +8,13 @@ movevisitor::movevisitor()
 
 void movevisitor::visit(gameobject* e)
 {
-	e->setx(e->getx()+rand()%3-1);
-	e->sety(e->gety()+rand()%3-1);
+	if(e->getdestination() == e->getposition())
+	{
+		e->setdestination(ivec2(rand() % 20, rand() % 20));
+	}
+	path p;
+
+	p.calculate(e->getposition(), e->getdestination());
+
+	e->setposition(p.getnext());
 }
