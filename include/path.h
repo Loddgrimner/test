@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+#include <deque>
 #include "ivec2.h"
 
 class path
@@ -9,8 +9,9 @@ public:
 	path();
 	void calculate(ivec2 start, ivec2 end);
 	ivec2 getnext();
+	void draw();
 
 private:
 	void plot(int x, int y);
-	std::vector<ivec2> waypoints;
+	std::deque<ivec2> waypoints;
 };

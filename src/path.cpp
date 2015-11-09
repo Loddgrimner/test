@@ -6,11 +6,19 @@ path::path()
 {
 }
 
+void path::draw()
+{
+	for (auto i : this->waypoints) {
+		mvprintw(i.getx(),i.gety(),"*");
+	}
+}
+
 ivec2 path::getnext()
 {
 	if(this->waypoints.size() >= 2)
 	{
-		return this->waypoints[1];
+		this->waypoints.pop_front();
+		return this->waypoints[0];
 	}
 	return ivec2(0,0);
 }
@@ -18,7 +26,6 @@ ivec2 path::getnext()
 void path::plot(int x, int y)
 {
 	this->waypoints.push_back(ivec2(x,y));
-	mvprintw(x,y,"*");
 }
 
 void path::calculate(ivec2 start, ivec2 end)

@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "gameobject.h"
 #include "visitor.h"
 
@@ -52,4 +53,19 @@ ivec2 gameobject::getdestination()
 void gameobject::setdestination(ivec2 v)
 {
 	this->destination.set(v);
+}
+
+path gameobject::getpath()
+{
+	return this->currentpath;
+}
+
+void gameobject::move()
+{
+	if(this->getdestination() == this->getposition())
+	{
+		this->setdestination(ivec2(rand() % 50, rand() % 50));
+		this->currentpath.calculate(this->getposition(),this->getdestination());
+	}
+	this->position = this->currentpath.getnext();
 }
