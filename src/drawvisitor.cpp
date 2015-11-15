@@ -7,6 +7,6 @@ drawvisitor::drawvisitor()
 
 void drawvisitor::visit(gameobject* e)
 {
-	//e->getpath().draw();
+	e->getpath().draw();
 	mvprintw(e->getx(),e->gety(),"╬");
 }

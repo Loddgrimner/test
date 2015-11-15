@@ -55,3 +55,13 @@ bool ivec2::operator!=(ivec2 other)
 {
 	return !(*this == other);
 }
+
+ivec2 ivec2::operator+(ivec2 other)
+{
+	return ivec2(getx()+other.getx(),gety()+other.gety());
+}
+
+ivec2 ivec2::operator-(ivec2 other)
+{
+	return ivec2(getx()-other.getx(),gety()-other.gety());
+}

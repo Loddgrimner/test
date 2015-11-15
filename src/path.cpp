@@ -6,6 +6,28 @@ path::path()
 {
 }
 
+int path::getsize()
+{
+	return this->waypoints.size();
+}
+
+ivec2 path::getcurrent()
+{
+	if(this->getsize() >= 1)
+	{
+		return this->waypoints[0];
+	}
+	return ivec2(0,0);
+}
+
+void path::pop_front()
+{
+	if(this->getsize() >= 1)
+	{
+		this->waypoints.pop_front();
+	}
+}
+
 void path::draw()
 {
 	for (auto i : this->waypoints) {

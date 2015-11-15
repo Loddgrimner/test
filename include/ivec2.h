@@ -14,6 +14,8 @@ public:
 	
 	bool operator==(ivec2 other);
 	bool operator!=(ivec2 other);
+	ivec2 operator+(ivec2 other);
+	ivec2 operator-(ivec2 other);
 
 private:
 	int x;
