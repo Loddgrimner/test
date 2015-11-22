@@ -31,7 +31,7 @@ void path::pop_front()
 void path::draw()
 {
 	for (auto i : this->waypoints) {
-		mvprintw(i.getx(),i.gety(),"*");
+		mvprintw(i.getx(),i.gety(),"+");
 	}
 }
 

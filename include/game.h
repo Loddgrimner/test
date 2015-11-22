@@ -5,6 +5,7 @@
 #include "listvisitor.h"
 #include "movevisitor.h"
 #include "gameobject.h"
+#include "entity.h"
 
 class game
 {
@@ -15,5 +16,6 @@ public:
 	void draw();
 
 private:
-	std::vector<gameobject> gameobjects;
+	//std::vector<gameobject> gameobjects;
+	std::vector<entity> entities;
 };

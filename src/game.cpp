@@ -3,9 +3,10 @@
 
 game::game()
 {
-	this->gameobjects.push_back(gameobject());
-	this->gameobjects.push_back(gameobject());
-	this->gameobjects.push_back(gameobject());
+	for (int i = 0; i < 1000; ++i) {
+		this->entities.push_back(entity());
+	}
+	//this->gameobjects.push_back(gameobject());
 }
 
 game::~game()
@@ -14,16 +15,24 @@ game::~game()
 
 void game::update()
 {
-	movevisitor mv;
+	for (auto& i : entities) {
+		i.update();
+	}
+
+	/*movevisitor mv;
 
 	for (auto& i : gameobjects) {
 		i.accept(mv);
-	}
+	}*/
 }
 
 void game::draw()
 {
-	drawvisitor dw;
+	for (auto& i : entities) {
+		i.draw();
+	}
+
+	/*drawvisitor dw;
 	for (auto& i : gameobjects) {
 		i.accept(dw);
 	}
@@ -31,5 +40,5 @@ void game::draw()
 	listvisitor lv;
 	for (auto& i : gameobjects) {
 		i.accept(lv);
-	}
+	}*/
 }

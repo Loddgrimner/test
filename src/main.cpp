@@ -16,7 +16,7 @@ int main()
 	mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL);
 	noecho();
 	curs_set(0);
-	timeout(500);
+	timeout(1);
 
 	while(int c = getch() != 'q')
 	{

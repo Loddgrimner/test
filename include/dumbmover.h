@@ -3,7 +3,7 @@
 #include "ivec2.h"
 #include "path.h"
 
-class dumbmover
+class dumbmover : public physicscomponent
 {
 public:
 	dumbmover ();
@@ -13,6 +13,6 @@ private:
 	ivec2 position;
 	ivec2 delta;
 	path movepath;
-	int velocity;
+	int speed;
 	int movepoints;
 };
