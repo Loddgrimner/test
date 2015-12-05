@@ -11,7 +11,10 @@ entity::entity()
 
 entity::~entity()
 {
-	//delete this->physics;
+	if(this->physics != nullptr)
+	{
+		//delete this->physics;
+	}
 }
 
 void entity::update()

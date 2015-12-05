@@ -7,6 +7,7 @@ class dumbmover : public physicscomponent
 {
 public:
 	dumbmover ();
+	~dumbmover ();
 	void update();
 
 private:

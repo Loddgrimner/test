@@ -10,8 +10,12 @@ dumbmover::dumbmover()
 	position.setx(30);
 	position.sety(100);
 
-	speed = rand() % 10 + 1;
+	speed = rand() % 50 + 1;
 	movepoints = 0;
+}
+
+dumbmover::~dumbmover()
+{
 }
 
 void dumbmover::update()
